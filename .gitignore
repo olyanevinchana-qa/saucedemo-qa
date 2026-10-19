@@ -1,0 +1,23 @@
+# Local planning, documentation, and editor settings
+/.idea/
+/specs/
+/AGENTS.md
+/README.md
+*.iml
+# Dependencies and generated output
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/coverage/
+/dist/
+*.tsbuildinfo
+
+# Local environment and browser sessions
+.env
+.env.*
+!.env.example
+/playwright/.auth/
+
+# macOS metadata
+.DS_Store
