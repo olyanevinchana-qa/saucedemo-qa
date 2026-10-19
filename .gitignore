@@ -1,8 +1,10 @@
 # Local planning, documentation, and editor settings
 /.idea/
+/.claude/
 /specs/
 /AGENTS.md
 /README.md
+/skills-lock.json
 *.iml
 # Dependencies and generated output
 node_modules/
