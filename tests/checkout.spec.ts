@@ -8,7 +8,7 @@ import { InventoryPage } from '../src/pages/inventory.page';
 import { CartPage } from '../src/pages/cart.page';
 import { CheckoutPage } from '../src/pages/checkout.page';
 
-test('QA-003: checkout completes the order', async ({ page, baseURL }) => {
+test('checkout completes the order', async ({ page, baseURL }) => {
   const credentials = getValidLoginCredentials();
   const login = new LoginPage(page);
   const inventory = new InventoryPage(page);
