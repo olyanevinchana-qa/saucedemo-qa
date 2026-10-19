@@ -1,5 +1,6 @@
 import type { Locator, Page } from '@playwright/test';
 import type { Product } from '../data/products';
+import { pageTitle } from './page-title';
 
 export class InventoryPage {
   readonly title: Locator;
@@ -8,7 +9,7 @@ export class InventoryPage {
   private readonly cartLink: Locator;
 
   constructor(private readonly page: Page) {
-    this.title = page.locator('[data-test="title"]');
+    this.title = pageTitle(page);
     this.products = page.locator('[data-test="inventory-item"]');
     this.cartBadge = page.locator('[data-test="shopping-cart-badge"]');
     this.cartLink = page.locator('[data-test="shopping-cart-link"]');
