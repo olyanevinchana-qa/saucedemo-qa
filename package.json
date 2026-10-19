@@ -2,6 +2,8 @@
   "name": "automation-technical-test",
   "version": "0.1.0",
   "private": true,
+  "author": "olyanevinchana-qa",
+  "license": "UNLICENSED",
   "description": "Playwright UI automation technical assessment for SauceDemo",
   "repository": {
     "type": "git",
