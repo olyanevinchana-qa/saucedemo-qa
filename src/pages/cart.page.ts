@@ -3,10 +3,12 @@ import type { Locator, Page } from '@playwright/test';
 export class CartPage {
   readonly title: Locator;
   readonly items: Locator;
+  private readonly checkoutButton: Locator;
 
   constructor(page: Page) {
     this.title = page.locator('[data-test="title"]');
     this.items = page.locator('[data-test="inventory-item"]');
+    this.checkoutButton = page.locator('[data-test="checkout"]');
   }
 
   itemName(item: Locator): Locator {
@@ -23,5 +25,9 @@ export class CartPage {
 
   itemQuantity(item: Locator): Locator {
     return item.locator('[data-test="item-quantity"]');
+  }
+
+  async checkout(): Promise<void> {
+    await this.checkoutButton.click();
   }
 }
