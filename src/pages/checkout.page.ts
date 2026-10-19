@@ -1,5 +1,6 @@
 import type { Locator, Page } from '@playwright/test';
 import type { Customer } from '../data/customer';
+import { pageTitle } from './page-title';
 
 export class CheckoutPage {
   readonly title: Locator;
@@ -9,7 +10,6 @@ export class CheckoutPage {
   readonly total: Locator;
   readonly completeHeader: Locator;
   readonly completeText: Locator;
-  readonly cartBadge: Locator;
   private readonly firstName: Locator;
   private readonly lastName: Locator;
   private readonly postalCode: Locator;
@@ -17,7 +17,7 @@ export class CheckoutPage {
   private readonly finishButton: Locator;
 
   constructor(page: Page) {
-    this.title = page.locator('[data-test="title"]');
+    this.title = pageTitle(page);
     this.firstName = page.locator('[data-test="firstName"]');
     this.lastName = page.locator('[data-test="lastName"]');
     this.postalCode = page.locator('[data-test="postalCode"]');
@@ -29,7 +29,6 @@ export class CheckoutPage {
     this.finishButton = page.locator('[data-test="finish"]');
     this.completeHeader = page.locator('[data-test="complete-header"]');
     this.completeText = page.locator('[data-test="complete-text"]');
-    this.cartBadge = page.locator('[data-test="shopping-cart-badge"]');
   }
 
   async fillInformation(customer: Customer): Promise<void> {

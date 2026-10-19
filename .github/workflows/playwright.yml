@@ -2,7 +2,7 @@ name: Playwright tests
 
 on:
   pull_request:
-    branches: [mian]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -28,6 +28,8 @@ jobs:
           cache: npm
 
       - run: npm ci
+
+      - run: npm run typecheck
 
       - run: npx playwright install --with-deps chromium firefox webkit
 
