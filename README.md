@@ -151,6 +151,19 @@ days. Download them from the run's page and open `index.html` from the report.
 | macOS, Chromium / Firefox / WebKit | Run locally. |
 | Linux (`ubuntu-latest`), Chromium / Firefox / WebKit | Run in GitHub Actions. |
 
+## Future improvements
+
+The following are not implemented in this version. They are possible next steps:
+
+- **More users and login validation.** Other demo users (for example the locked-out
+  user) and further invalid-login cases such as empty fields.
+- **More products and cart behavior.** Additional products, carts with several
+  items, removing items, and the empty-cart state.
+- **Checkout validation.** Required-field errors on the customer form, cancelling a
+  checkout, and a broader check of the order totals.
+- **API and UI comparison.** Comparing data from a public API with what the UI shows.
+  The API, the matching UI, and the data mapping still need to be chosen.
+
 ## Assumptions and limitations
 
 - The tests use the live public site, so they need network access and can be
