@@ -5,11 +5,13 @@ export class LoginPage {
   private readonly username: Locator;
   private readonly password: Locator;
   private readonly submit: Locator;
+  readonly errorMessage: Locator;
 
   constructor(private readonly page: Page) {
     this.username = page.getByPlaceholder('Username', { exact: true });
     this.password = page.getByPlaceholder('Password', { exact: true });
     this.submit = page.getByRole('button', { name: 'Login', exact: true });
+    this.errorMessage = page.locator('[data-test="error"]');
   }
 
   async goto(): Promise<void> {
