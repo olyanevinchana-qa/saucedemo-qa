@@ -24,10 +24,11 @@ try {
 export default defineConfig({
   testDir: './tests',
   retries: 0,
-  reporter: 'list',
+  reporter: [['list'], ['html', { open: 'never' }]],
   use: {
     baseURL,
     headless: true,
+    screenshot: 'only-on-failure',
   },
   projects: [
     { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
